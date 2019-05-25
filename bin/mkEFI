@@ -1,0 +1,65 @@
+#!/bin/bash
+
+usage() { echo "Usage: $0 [-p <path to git repo>] [-m <laptop|desktop>]" 1>&2; exit 1; }
+
+while getopts ":p:m:" o; do
+    case "${o}" in
+        p)
+            p=${OPTARG}
+            if [ ! -d "${p}" ] ; then
+                echo "directory ${p} does not exist"
+                exit 1
+            fi
+            if [ ! -d "${p}/EFI" ] ; then
+                echo "directory ${p}/EFI does not exist"
+                exit 1
+            fi
+            ;;
+        m)
+            m=${OPTARG}
+            if [ "${m}" != "laptop" ] ; then
+                if [ "${m}" != "desktop" ] ; then
+                    echo "-m must be laptop|desktop"
+                    exit 1
+                fi
+            fi
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+
+[ -e ${p} ] && [ -e ${m} ] && usage
+
+
+EFITMP=/tmp/EFI.sky    
+
+cd "${p}"
+rm -rf "${EFITMP}"
+mkdir "${EFITMP}"
+cp -a EFI "${EFITMP}"
+
+
+cd "${EFITMP}"/EFI/CLOVER/ACPI
+rm -rf patched
+cp -a patched.${m} patched
+
+cd "${EFITMP}"/EFI/CLOVER/
+rm -f config.plist
+cp config.plist.${m} config.plist
+
+cd "${EFITMP}"/EFI/CLOVER/kexts/Other
+rm -rf X86PlatformPluginInjector.kext
+rm -rf ACPIBatteryManager.kext
+
+echo "${EFITMP} is setup for a ${m}"
+
+exit 0
+
+echo rm -rf ${EFITMP}
+
+cp -a ${EFI} ${EFITMP}
+
+cd ${EFITMP}
+
