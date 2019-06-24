@@ -27,6 +27,16 @@
             <array>
                <dict>
                   <key>Comment</key>
+                  <string>change GFX0 to IGPU</string>
+                  <key>Disabled</key>
+                  <false/>
+                  <key>Find</key>
+                  <data>R0ZYMA==</data>
+                  <key>Replace</key>
+                  <data>SUdQVQ==</data>
+               </dict>
+               <dict>
+                  <key>Comment</key>
                   <string>change _DSM to XDSM</string>
                   <key>Disabled</key>
                   <false/>
@@ -44,16 +54,6 @@
                   <data>X09TSQ==</data>
                   <key>Replace</key>
                   <data>WE9TSQ==</data>
-               </dict>
-               <dict>
-                  <key>Comment</key>
-                  <string>change GFX0 to IGPU</string>
-                  <key>Disabled</key>
-                  <false/>
-                  <key>Find</key>
-                  <data>R0ZYMA==</data>
-                  <key>Replace</key>
-                  <data>SUdQVQ==</data>
                </dict>
                <dict>
                   <key>Comment</key>
@@ -176,7 +176,7 @@
       <key>Boot</key>
       <dict>
          <key>Arguments</key>
-         <string>kext-dev-mode=1</string>
+         <string>kext-dev-mode=0</string>
          <key>DefaultVolume</key>
          <string>osX</string>
          <key>IgnoreNVRAMBoot</key>
@@ -191,8 +191,10 @@
          <false/>
          <key>Timeout</key>
          <integer>10</integer>
+         <key>XMPDetection</key>
+         <string>Yes</string>
       </dict>
-      <key>CPU</key>
+      <key>#CPU</key>
       <dict>
          <key>HWPEnable</key>
          <true/>
@@ -216,33 +218,19 @@
             <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
             <dict>
                <key>AAPL,ig-platform-id</key>
-               <data>
-                  AAAWGQ==
-               </data>
+               <data>AAAWGQ==</data>
                <key>device-id</key>
-               <data>
-                  FhkAAA==
-               </data>
+               <data>FhkAAA==</data>
                <key>enable-hdmi20</key>
-               <data>
-                  AQAAAA==
-               </data>
+               <data>AQAAAA==</data>
                <key>framebuffer-fbmem</key>
-               <data>
-                  AACQAA==
-               </data>
+               <data>AACQAA==</data>
                <key>framebuffer-patch-enable</key>
-               <data>
-                  AQAAAA==
-               </data>
+               <data>AQAAAA==</data>
                <key>framebuffer-stolenmem</key>
-               <data>
-                  AAAwAQ==
-               </data>
+               <data>AAAwAQ==</data>
                <key>framebuffer-unifiedmem</key>
-               <data>
-                  AAAAgA==
-               </data>
+               <data>AAAAgA==</data>
                <key>enable-cfl-backlight-fix</key>
                <true/>
             </dict>
@@ -259,22 +247,6 @@
       </dict>
       <key>GUI</key>
       <dict>
-         <key>Custom</key>
-         <dict>
-            <key>Comment</key>
-            <string>Windows Entries</string>
-            <key>Entries</key>
-            <array>
-               <dict>
-                  <key>FullTitle</key>
-                  <string>Boot Windows 10</string>
-                  <key>Type</key>
-                  <string>Windows</string>
-                  <key>Volume</key>
-                  <string>Insert Windows Disk EFI Partition GUID here</string>
-               </dict>
-            </array>
-         </dict>
          <key>Hide</key>
          <array>
             <string>Preboot</string>
@@ -322,28 +294,6 @@
          <array>
             <dict>
                <key>Comment</key>
-               <string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>ILniAAAADzA=</data>
-               <key>MatchOS</key>
-               <string>10.12</string>
-               <key>Replace</key>
-               <data>ILniAAAAkJA=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>Disable panic kext logging on 10.13 release kernel (credit Vandroiy)</string>
-               <key>MatchOS</key>
-               <string>10.13.x</string>
-               <key>Find</key>
-               <data>igKEwHRE</data>
-               <key>Replace</key>
-               <data>igKEwOtE</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
                <string>Disable panic kext logging on 10.14 release kernel (credit Vandroiy)</string>
                <key>MatchOS</key>
                <string>10.14.x</string>
@@ -355,64 +305,6 @@
          </array>
          <key>KextsToPatch</key>
          <array>
-            <dict>
-               <key>Comment</key>
-               <string>change 15 port limit to 26 in XHCI kext (100-series)</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>g72M/v//EA==</data>
-               <key>MatchOS</key>
-               <string>10.11.x</string>
-               <key>Name</key>
-               <string>AppleUSBXHCIPCI</string>
-               <key>Replace</key>
-               <data>g72M/v//Gw==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>change 15 port limit to 26 in XHCI kext (100-series)</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>g710////EA==</data>
-               <key>MatchOS</key>
-               <string>10.12.x</string>
-               <key>Name</key>
-               <string>AppleUSBXHCIPCI</string>
-               <key>Replace</key>
-               <data>g710////Gw==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>USB 10.13.6+ by PMHeart</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>g32IDw+DpwQAAA==</data>
-               <key>InfoPlistPatch</key>
-               <false/>
-               <key>MatchOS</key>
-               <string>10.13.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.usb.AppleUSBXHCI</string>
-               <key>Replace</key>
-               <data>g32ID5CQkJCQkA==</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>disable port limit in XHCI kext (credit PMHeart)</string>
-               <key>MatchOS</key>
-               <string>10.14.0</string>
-               <key>Name</key>
-               <string>com.apple.driver.usb.AppleUSBXHCI</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>g/sPD4MDBQAA</data>
-               <key>Replace</key>
-               <data>g/sPkJCQkJCQ</data>
-            </dict>
             <dict>
                <key>Comment</key>
                <string>disable port limit in XHCI kext (credit DalianSky,Ricky)</string>
@@ -441,118 +333,6 @@
             </dict>
             <dict>
                <key>Comment</key>
-               <string>10.11.dp1+ BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok original</string>
-               <key>Disabled</key>
-               <false/>
-               <key>Find</key>
-               <data>SIX/dEdIiwc=</data>
-               <key>MatchOS</key>
-               <string>10.11.x,10.12.x</string>
-               <key>Name</key>
-               <string>IOBluetoothFamily</string>
-               <key>Replace</key>
-               <data>Qb4PAAAA60Q=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - darkvoid fcvo patch</string>
-               <key>Disabled</key>
-               <false/>
-               <key>Find</key>
-               <data>gflSqgAAdSk=</data>
-               <key>MatchOS</key>
-               <string>10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>gflSqgAAZpA=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - PCI Error 1</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>QTnEdRs=</data>
-               <key>MatchOS</key>
-               <string>10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>QTnEZpA=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - PCI Error 2</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>QQ+3zTnBdQw=</data>
-               <key>MatchOS</key>
-               <string>10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>QQ+3zTnBZpA=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - PCI Error 3</string>
-               <key>Disabled</key>
-               <true/>
-               <key>Find</key>
-               <data>g33EBHQG</data>
-               <key>MatchOS</key>
-               <string>10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>g33EBGaQ</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - whitelist patch (board-id), 10.12.dp1, credit RehabMan</string>
-               <key>Disabled</key>
-               <false/>
-               <key>Find</key>
-               <data>MdtMO33YdRI=</data>
-               <key>MatchOS</key>
-               <string>10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>Mdv/w5CQkJA=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - whitelist patch (board-id), 10.11.x, credit RehabMan</string>
-               <key>Disabled</key>
-               <false/>
-               <key>Find</key>
-               <data>MdtMO2XYdRI=</data>
-               <key>MatchOS</key>
-               <string>10.11.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>Mdv/w5CQkJA=</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
-               <string>BCM94352 - Airport-Extreme</string>
-               <key>Disabled</key>
-               <false/>
-               <key>Find</key>
-               <data>axAAAHUN</data>
-               <key>MatchOS</key>
-               <string>10.11.x,10.12.x</string>
-               <key>Name</key>
-               <string>com.apple.driver.AirPort.Brcm4360</string>
-               <key>Replace</key>
-               <data>axAAAJCQ</data>
-            </dict>
-            <dict>
-               <key>Comment</key>
                <string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
                <key>Disabled</key>
                <true/>
@@ -563,7 +343,6 @@
                <key>Replace</key>
                <data>RiV1VHh4eHgA</data>
             </dict>
-
          </array>
       </dict>
       <key>RtVariables</key>
