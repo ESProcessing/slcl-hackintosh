@@ -50,8 +50,11 @@ rm -f config.plist
 cp config.plist.${m} config.plist
 
 cd "${EFITMP}"/EFI/CLOVER/kexts/Other
-rm -rf X86PlatformPluginInjector.kext
-rm -rf ACPIBatteryManager.kext
+mkdir -p ../../kexts.notused/Other
+
+mv X86PlatformPluginInjector.kext ../../kexts.notused/Other
+mv ACPIBatteryManager.kext ../../kexts.notused/Other
+[ ${m} == "desktop" ] && mv Voodo* ../../kexts.notused/Other
 
 echo "${EFITMP} is setup for a ${m}"
 
