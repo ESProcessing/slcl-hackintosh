@@ -1,6 +1,6 @@
 
-Clover EFI installer log - Wed Dec 18 13:33:19 EST 2019
-Installer version: v2.5k r5099 EFI bootloader
+Clover EFI installer log - Thu Dec 19 14:14:40 EST 2019
+Installer version: v2.5k r5100 EFI bootloader
 ======================================================
 /dev/disk0 (internal, physical):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
@@ -12,7 +12,7 @@ Installer version: v2.5k r5099 EFI bootloader
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      APFS Container Scheme -                      +479.9 GB   disk1
                                  Physical Store disk0s2
-   1:                APFS Volume osX - Data              181.1 GB   disk1s1
+   1:                APFS Volume osX - Data              181.3 GB   disk1s1
    2:                APFS Volume Preboot                 81.7 MB    disk1s2
    3:                APFS Volume Recovery                528.5 MB   disk1s3
    4:                APFS Volume VM                      1.1 GB     disk1s4
@@ -37,12 +37,14 @@ Target volume /Volumes/uOsx on disk3 is APFS on physical store disk2s2
 ======================================================
 Backing up EFI files
 
-Backing up /Volumes/uOsx/EFIROOTDIR/EFI folder to /Volumes/uOsx/EFI-Backups/r4988/2019-12-18-13h33/EFI
+Backing up /Volumes/uOsx/EFIROOTDIR/EFI folder to /Volumes/uOsx/EFI-Backups/r5099/2019-12-19-14h14/EFI
 ======================================================
 Installing BootSectors/BootLoader
 
 Stage 0 - Don't write any of boot0af, boot0md, boot0ss to /Volumes/uOsx
 Stage 1 - Don't write any of boot1h2, boot1f32alt, boot1xalt to /Volumes/uOsx
+Removing UEFI/HFSPlus.efi because VBoxHfs.efi is installed!
+Removing UEFI/AptioMemoryFix.efi because OsxAptioFix3Drv.efi is installed
 
 ======================================================
 =========== Clover EFI Installation Finish ===========
