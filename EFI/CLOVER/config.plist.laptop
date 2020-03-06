@@ -18,23 +18,11 @@
                     <true/>
                     <key>FixIPIC</key>
                     <true/>
-                    <key>FixRegions</key>
-                    <false/>
                     <key>FixShutdown</key>
                     <true/>
                 </dict>
                 <key>Patches</key>
                 <array>
-                    <dict>
-                        <key>Comment</key>
-                        <string>change GFX0 to IGPU</string>
-                        <key>Disabled</key>
-                        <true/>
-                        <key>Find</key>
-                        <data>R0ZYMA==</data>
-                        <key>Replace</key>
-                        <data>SUdQVQ==</data>
-                    </dict>
                     <dict>
                         <key>Comment</key>
                         <string>change _DSM to XDSM</string>
@@ -57,26 +45,6 @@
                     </dict>
                     <dict>
                         <key>Comment</key>
-                        <string>change HECI to IMEI</string>
-                        <key>Disabled</key>
-                        <true/>
-                        <key>Find</key>
-                        <data>SEVDSQ==</data>
-                        <key>Replace</key>
-                        <data>SU1FSQ==</data>
-                    </dict>
-                    <dict>
-                        <key>Comment</key>
-                        <string>change SAT1 to SATA</string>
-                        <key>Disabled</key>
-                        <true/>
-                        <key>Find</key>
-                        <data>U0FUMQ==</data>
-                        <key>Replace</key>
-                        <data>U0FUQQ==</data>
-                    </dict>
-                    <dict>
-                        <key>Comment</key>
                         <string>change _PTS to ZPTS</string>
                         <key>Disabled</key>
                         <false/>
@@ -87,16 +55,6 @@
                     </dict>
                     <dict>
                         <key>Comment</key>
-                        <string>change XHC1 to XHC</string>
-                        <key>Disabled</key>
-                        <true/>
-                        <key>Find</key>
-                        <data>WEhDMQ==</data>
-                        <key>Replace</key>
-                        <data>WEhDXw==</data>
-                    </dict>
-                    <dict>
-                        <key>Comment</key>
                         <string>change _WAK to ZWAK (T460)</string>
                         <key>Disabled</key>
                         <false/>
@@ -104,26 +62,6 @@
                         <data>X1dBSwk=</data>
                         <key>Replace</key>
                         <data>WldBSwk=</data>
-                    </dict>
-                    <dict>
-                        <key>Comment</key>
-                        <string>change Notify(\_SB.BAT0 to Notify(_SB.BATC</string>
-                        <key>Disabled</key>
-                        <true/>
-                        <key>Find</key>
-                        <data>hlwuX1NCX0JBVDA=</data>
-                        <key>Replace</key>
-                        <data>hlwuX1NCX0JBVEM=</data>
-                    </dict>
-                    <dict>
-                        <key>Comment</key>
-                        <string>change Notify(\_SB.BAT1 to Notify(_SB.BATC</string>
-                        <key>Disabled</key>
-                        <true/>
-                        <key>Find</key>
-                        <data>hlwuX1NCX0JBVDE=</data>
-                        <key>Replace</key>
-                        <data>hlwuX1NCX0JBVEM=</data>
                     </dict>
                     <dict>
                         <key>Comment</key>
@@ -160,18 +98,6 @@
             <string>0x0CF9</string>
             <key>ResetValue</key>
             <string>0x06</string>
-            <key>SSDT</key>
-            <dict>
-                <key>DropOem</key>
-                <false/>
-                <key>Generate</key>
-                <dict>
-                    <key>CStates</key>
-                    <false/>
-                    <key>PStates</key>
-                    <false/>
-                </dict>
-            </dict>
         </dict>
         <key>Boot</key>
         <dict>
@@ -194,24 +120,12 @@
             <key>XMPDetection</key>
             <string>Yes</string>
         </dict>
-        <key>#CPU</key>
-        <dict>
-            <key>HWPEnable</key>
-            <true/>
-            <key>UseARTFrequency</key>
-            <false/>
-        </dict>
         <key>Devices</key>
         <dict>
             <key>Audio</key>
             <dict>
                 <key>Inject</key>
                 <integer>29</integer>
-            </dict>
-            <key>FakeID</key>
-            <dict>
-                <key>IntelGFX</key>
-                <string>0x0000</string>
             </dict>
             <key>Properties</key>
             <dict>
@@ -247,15 +161,6 @@
                     <data>AAgAAA==</data>
                 </dict>
             </dict>
-            <key>USB</key>
-            <dict>
-                <key>AddClockID</key>
-                <false/>
-                <key>FixOwnership</key>
-                <false/>
-                <key>Inject</key>
-                <false/>
-            </dict>
         </dict>
         <key>GUI</key>
         <dict>
@@ -284,53 +189,14 @@
             <key>Theme</key>
             <string>BGM</string>
         </dict>
-        <key>Graphics</key>
-        <dict>
-            <key>Inject</key>
-            <dict>
-                <key>Intel</key>
-                <false/>
-            </dict>
-        </dict>
         <key>KernelAndKextPatches</key>
         <dict>
             <key>AppleRTC</key>
             <true/>
-            <key>AppleIntelCPUPM</key>
-            <false/>
-            <key>KernelLapic</key>
-            <false/>
             <key>KernelPm</key>
             <true/>
-            <key>KernelToPatch</key>
-            <array>
-                <dict>
-                    <key>Comment</key>
-                    <string>Disable panic kext logging on 10.14 release kernel (credit Vandroiy)</string>
-                    <key>MatchOS</key>
-                    <string>10.14.x</string>
-                    <key>Find</key>
-                    <data>igKEwHRC</data>
-                    <key>Replace</key>
-                    <data>igKEwOtC</data>
-                </dict>
-            </array>
             <key>KextsToPatch</key>
             <array>
-                <dict>
-                    <key>Comment</key>
-                    <string>disable port limit in XHCI kext (credit DalianSky,Ricky)</string>
-                    <key>MatchOS</key>
-                    <string>10.14.1,10.14.2</string>
-                    <key>Name</key>
-                    <string>com.apple.driver.usb.AppleUSBXHCI</string>
-                    <key>Disabled</key>
-                    <true/>
-                    <key>Find</key>
-                    <data>g/sPD4OPBAAA</data>
-                    <key>Replace</key>
-                    <data>g/sPkJCQkJCQ</data>
-                </dict>
                 <dict>
                     <key>Comment</key>
                     <string>Enable TRIM for non-Apple SSDs</string>
@@ -342,18 +208,6 @@
                     <string>IOAHCIBlockStorage</string>
                     <key>Replace</key>
                     <data>AAAAAAAAAAAAAAA=</data>
-                </dict>
-                <dict>
-                    <key>Comment</key>
-                    <string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
-                    <key>Disabled</key>
-                    <true/>
-                    <key>Name</key>
-                    <string>com.apple.driver.AppleBacklight</string>
-                    <key>Find</key>
-                    <data>RiV1VCUwNHgA</data>
-                    <key>Replace</key>
-                    <data>RiV1VHh4eHgA</data>
                 </dict>
             </array>
         </dict>
