@@ -102,7 +102,7 @@
         <key>Boot</key>
         <dict>
             <key>Arguments</key>
-            <string>kext-dev-mode=0 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
+            <string>kext-dev-mode=0 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300 -disablegfxfirmware</string>
             <key>DefaultVolume</key>
             <string>osX</string>
             <key>IgnoreNVRAMBoot</key>
