@@ -1,6 +1,6 @@
 #!/bin/bash
 
-usage() { echo "Usage: $0 [-p <path to git repo>] [-m <laptop|desktop>]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 [-p <path to git repo>] [-m <sl_desktop|cl_desktop|laptop>]" 1>&2; exit 1; }
 
 while getopts ":p:m:" o; do
     case "${o}" in
@@ -18,9 +18,11 @@ while getopts ":p:m:" o; do
         m)
             m=${OPTARG}
             if [ "${m}" != "laptop" ] ; then
-                if [ "${m}" != "desktop" ] ; then
-                    echo "-m must be laptop|desktop"
-                    exit 1
+                if [ "${m}" != "sl_desktop" ] ; then
+                    if [ "${m}" != "cl_desktop" ] ; then
+			echo "-m must be laptop|sl_desktop|cl_desktop"
+			exit 1
+		    fi
                 fi
             fi
             ;;
@@ -33,7 +35,7 @@ done
 [ -e ${p} ] && [ -e ${m} ] && usage
 
 
-EFITMP=/tmp/EFI.sky    
+EFITMP=/tmp/EFI.slcl    
 
 cd "${p}"
 rm -rf "${EFITMP}"
@@ -50,11 +52,24 @@ rm -f config.plist
 cp config.plist.${m} config.plist
 
 cd "${EFITMP}"/EFI/CLOVER/kexts/Other
-mkdir -p ../../kexts.notused/Other
+mkdir -p ../Off
 
-mv X86PlatformPluginInjector.kext ../../kexts.notused/Other
-mv ACPIBatteryManager.kext ../../kexts.notused/Other
-[ ${m} == "desktop" ] && mv Voodo* ../../kexts.notused/Other
+
+mv X86PlatformPluginInjector.kext ../Off
+mv ACPIBatteryManager.kext ../Off
+
+case "${m}" in
+    laptop)
+	mv SmallTree* ../Off	
+    ;;
+    sl_desktop)
+	mv SmallTree* ../Off		
+	mv Voodo* ../Off
+    ;;
+    cl_desktop)
+	mv Voodo* ../Off	
+    ;;
+esac
 
 echo "${EFITMP} is setup for a ${m}"
 
