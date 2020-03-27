@@ -55,8 +55,6 @@ cd "${EFITMP}"/EFI/CLOVER/kexts/Other
 mkdir -p ../Off
 
 
-mv X86PlatformPluginInjector.kext ../Off
-mv ACPIBatteryManager.kext ../Off
 
 case "${m}" in
     laptop)
@@ -65,9 +63,16 @@ case "${m}" in
     sl_desktop)
 	mv SmallTree* ../Off		
 	mv Voodo* ../Off
+	mv X86PlatformPluginInjector.kext ../Off
+	mv ACPIBatteryManager.kext ../Off
     ;;
     cl_desktop)
-	mv Voodo* ../Off	
+	mv Voodo* ../Off
+	mv X86PlatformPluginInjector.kext ../Off
+	mv ACPIBatteryManager.kext ../Off
+    ;;
+    cl_desktop)
+		
     ;;
 esac
 
