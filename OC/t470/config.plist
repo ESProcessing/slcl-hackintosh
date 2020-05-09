@@ -1078,10 +1078,20 @@
         <dict>
             <key>Add</key>
             <dict>
-                <key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
+                <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
                 <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Internal@0,31,3</string>
+                    <key>device-id</key>
+                    <data>cJ0AAA==</data>
+                    <key>device_type</key>
+                    <string>Audio device</string>
+                    <key>hda-gfx</key>
+                    <string>onboard-1</string>
                     <key>layout-id</key>
-                    <data>HAAAAA==</data>
+                    <data>HQAAAA==</data>
+                    <key>model</key>
+                    <string>100 Series/C230 Series Chipset Family HD Audio Controller</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
                 <dict>
@@ -1586,13 +1596,12 @@
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <dict>
                     <key>boot-args</key>
-                    <string>keepsyms=1 alcid=29 bpr_probedelay=100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
+                    <key>boot-args</key>
+                    <string>-hbfx-dump-nvram</string>
                     <key>csr-active-config</key>
-                    <data>AAAAAA==</data>
+                    <data>AwAAAA==</data>
                     <key>prev-lang:kbd</key>
                     <string>en-US:0</string>
-                    <key>SystemAudioVolume</key>
-                    <data>Rg==</data>
                 </dict>
             </dict>
             <key>Block</key>
@@ -1672,6 +1681,19 @@
         </dict>
         <key>UEFI</key>
         <dict>
+            <key>APFS</key>
+            <dict>
+                <key>EnableJumpstart</key>
+                <true/>
+                <key>HideVerbose</key>
+                <true/>
+                <key>JumpstartHotPlug</key>
+                <false/>
+                <key>MinDate</key>
+                <integer>0</integer>
+                <key>MinVersion</key>
+                <integer>0</integer>
+            </dict>
             <key>Audio</key>
             <dict>
                 <key>AudioCodec</key>
@@ -1695,7 +1717,6 @@
             <array>
                 <string>OpenCanopy.efi</string>
                 <string>HfsPlus.efi</string>
-                <string>ApfsDriverLoader.efi</string>
                 <string>OpenRuntime.efi</string>
             </array>
             <key>Input</key>
@@ -1744,7 +1765,7 @@
                 <key>TextRenderer</key>
                 <string>BuiltinGraphics</string>
             </dict>
-            <key>Protocols</key>
+            <key>ProtocolOverrides</key>
             <dict>
                 <key>AppleAudio</key>
                 <false/>
