@@ -296,9 +296,9 @@
                     <key>MinKernel</key>
                     <string></string>
                     <key>BundlePath</key>
-                    <string>IntelMausiEthernet.kext</string>
+                    <string>IntelMausi.kext</string>
                     <key>ExecutablePath</key>
-                    <string>Contents/MacOS/IntelMausiEthernet</string>
+                    <string>Contents/MacOS/IntelMausi</string>
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
@@ -659,6 +659,19 @@
         </dict>
         <key>UEFI</key>
         <dict>
+            <key>APFS</key>
+            <dict>
+                <key>EnableJumpstart</key>
+                <true/>
+                <key>HideVerbose</key>
+                <true/>
+                <key>JumpstartHotPlug</key>
+                <false/>
+                <key>MinDate</key>
+                <integer>0</integer>
+                <key>MinVersion</key>
+                <integer>0</integer>
+            </dict>
             <key>Audio</key>
             <dict>
                 <key>AudioCodec</key>
@@ -681,7 +694,6 @@
             <key>Drivers</key>
             <array>
                 <string>OpenCanopy.efi</string>
-                <string>ApfsDriverLoader.efi</string>
                 <string>HfsPlus.efi</string>
                 <string>OpenRuntime.efi</string>
             </array>
@@ -731,7 +743,7 @@
                 <key>TextRenderer</key>
                 <string>BuiltinGraphics</string>
             </dict>
-            <key>Protocols</key>
+            <key>ProtocolOverrides</key>
             <dict>
                 <key>AppleAudio</key>
                 <false/>
