@@ -1160,7 +1160,7 @@
                     <key>Comment</key>
                     <string>MT2 emulator</string>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                     <key>ExecutablePath</key>
                     <string>Contents/MacOS/VoodooInput</string>
                     <key>MaxKernel</key>
@@ -1508,7 +1508,7 @@
                     <string>en-US:0</string>
                 </dict>
             </dict>
-            <key>Block</key>
+            <key>Delete</key>
             <dict>
                 <key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
                 <array>
