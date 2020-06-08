@@ -178,7 +178,7 @@
                     <key>Comment</key>
                     <string>trackpad</string>
                     <key>Path</key>
-                    <string>SSDT-ThinkPad_ClickPad.aml</string>
+                    <string>SSDT-ThinkPad_TrackPad.aml</string>
                     <key>Enabled</key>
                     <true/>
                 </dict>

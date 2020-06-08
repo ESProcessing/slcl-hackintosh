@@ -11,20 +11,17 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "ps2", 0)
             Return (Package()
             {
                 "RM,oem-id", "LENOVO",
-                "RM,oem-table-id", "Thinkpad_ClickPad",
+                "RM,oem-table-id", "Thinkpad_TrackPad",
             })
         }
         Name(RMCF, Package()
         {
             "Synaptics TouchPad", Package()
             {
-                "BogusDeltaThreshX", 800,
-                "BogusDeltaThreshY", 800,
+                "BogusDeltaThreshX", 100,
+                "BogusDeltaThreshY", 100,
                 "Clicking", ">y",
                 "DragLockTempMask", 0x40004,
-		// DragLockTempMask: `0x40004` corresponds to Control,
-		//                   `0x80008` corresponds to Command,
-  	        //                   `0x100010` corresponds to Option.
                 "DynamicEWMode", ">n",
                 "FakeMiddleButton", ">n",
                 "HWResetOnStart", ">y",
@@ -35,13 +32,20 @@ DefinitionBlock ("", "SSDT", 2, "ACDT", "ps2", 0)
                 "SmoothInput", ">y",
                 "UnsmoothInput", ">y",
                 "Thinkpad", ">y",
-                "EdgeBottom", 0,
-                "FingerZ", 30,
+                "DivisorX", 1,
+                "DivisorY", 1,
+                "FingerZ", 47,
                 "MaxTapTime", 100000000,
-                "MouseMultiplierX", 2,
-                "MouseMultiplierY", 2,
+                "MomentumScrollThreshY", 16,
+                "MouseMultiplierX", 8,
+                "MouseMultiplierY", 8,
                 "MouseScrollMultiplierX", 2,
                 "MouseScrollMultiplierY", 2,
+                "MultiFingerHorizontalDivisor", 4,
+                "MultiFingerVerticalDivisor", 4,
+                "Resolution", 3200,
+                "ScrollDeltaThreshX", 10,
+                "ScrollDeltaThreshY", 10,
                 //"TrackpointScrollYMultiplier", 1, //Change this value to 0xFFFF in order to inverse the vertical scroll direction of the Trackpoint when holding the middle mouse button.
                 //"TrackpointScrollXMultiplier", 1, //Change this value to 0xFFFF in order to inverse the horizontal scroll direction of the Trackpoint when holding the middle mouse button.
             },
