@@ -1,9 +1,9 @@
 //
-DefinitionBlock ("", "SSDT", 2, "OCLT", "SMBU", 0)
+DefinitionBlock ("", "SSDT", 2, "OCLT", "SBUS", 0)
 {
-    External (_SB_.PCI0.SMBU, DeviceObj)
+    External (_SB_.PCI0.SBUS, DeviceObj)
 
-    Scope (_SB.PCI0.SMBU)
+    Scope (_SB.PCI0.SBUS)
     {
         Device (BUS0)
         {

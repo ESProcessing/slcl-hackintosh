@@ -82,7 +82,9 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
     Method (_WAK, 1, NotSerialized) //Method (_WAK, 1, Serialized)
     {   
         If (_OSI ("Darwin"))
-        {
+	{
+  	    If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
+	    
             \_SB.PCI9.TWAK = Arg0
             
             if(\_SB.PCI9.FNOK ==1)
