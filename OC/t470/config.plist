@@ -8,14 +8,6 @@
             <array>
                 <dict>
                     <key>Comment</key>
-                    <string>SSDT-HPET.aml</string>
-                    <key>Path</key>
-                    <string>SSDT-HPET.aml</string>
-                    <key>Enabled</key>
-                    <false/>
-                </dict>
-                <dict>
-                    <key>Comment</key>
                     <string>SSDT-HTRF-t470.aml</string>
                     <key>Path</key>
                     <string>SSDT-HTRF-t470.aml</string>
@@ -37,14 +29,6 @@
                     <string>SSDT-ALS0.aml</string>
                     <key>Enabled</key>
                     <true/>
-                </dict>
-                <dict>
-                    <key>Comment</key>
-                    <string>HotKeys</string>
-                    <key>Path</key>
-                    <string>SSDT-BKeyQ14Q15-TP-LPCB.aml</string>
-                    <key>Enabled</key>
-                    <false/>
                 </dict>
                 <dict>
                     <key>Comment</key>
@@ -77,14 +61,6 @@
                     <true/>
                     <key>Path</key>
                     <string>SSDT-OCBATC-TP-LPCB.aml</string>
-                </dict>
-                <dict>
-                    <key>Comment</key>
-                    <string>Battery Combine BAT0/1 into BATC</string>
-                    <key>Enabled</key>
-                    <false/>
-                    <key>Path</key>
-                    <string>SSDT-OCBATC-TP-_BIX.aml</string>
                 </dict>
                 <dict>
                     <key>Comment</key>
@@ -184,19 +160,11 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string>trackpad</string>
-                    <key>Path</key>
-                    <string>SSDT-ThinkPad_ClickPad.aml</string>
-                    <key>Enabled</key>
-                    <false/>
-                </dict>
-                <dict>
-                    <key>Comment</key>
                     <string>keyboard</string>
                     <key>Path</key>
                     <string>SSDT-KBRD-t470.aml</string>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                 </dict>
             </array>
             <key>Delete</key>
@@ -204,6 +172,7 @@
             </array>
             <key>Patch</key>
             <array>
+
                 <dict>
                     <key>Comment</key>
                     <string>_DSM to XDSM (ALL)</string>
@@ -1820,6 +1789,9 @@
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
+
+
+
                 <dict>
                     <key>BundlePath</key>
                     <string>IntelMausi.kext</string>
@@ -1948,6 +1920,7 @@
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
+
             </array>
             <key>Block</key>
             <array>
