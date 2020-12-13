@@ -15,7 +15,7 @@
 // Find:     5F57414B09
 // Replace:  5A57414B09
 //
-DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
+DefinitionBlock("", "SSDT", 2, "T480", "PTSWAK", 0)
 {
     External(ZPTS, MethodObj)
     External(ZWAK, MethodObj)
@@ -49,23 +49,23 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
             }
         }
     }   
-    
+
     Method (_PTS, 1, NotSerialized) //Method (_PTS, 1, Serialized)
     {
         If (_OSI ("Darwin"))
         {
             \_SB.PCI9.TPTS = Arg0
-            
+
             if(\_SB.PCI9.FNOK ==1)
             {
                 Arg0 = 3
             }
-            
+
             If (CondRefOf (\DGPU._ON))
             {
                 \DGPU._ON ()
             }
-            
+
             If (CondRefOf(EXT1))
             {
                 EXT1(Arg0)
@@ -78,26 +78,24 @@ DefinitionBlock("", "SSDT", 2, "OCLT", "PTSWAK", 0)
 
         ZPTS(Arg0)
     }
-    
+
     Method (_WAK, 1, NotSerialized) //Method (_WAK, 1, Serialized)
     {   
         If (_OSI ("Darwin"))
-	{
-  	    If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }
-	    
+        {
             \_SB.PCI9.TWAK = Arg0
-            
+
             if(\_SB.PCI9.FNOK ==1)
             {
                 \_SB.PCI9.FNOK =0
                 Arg0 = 3
             }
-        
+
             If (CondRefOf (\DGPU._OFF))
             {
                 \DGPU._OFF ()
             }
-            
+
             If (CondRefOf(EXT3))
             {
                 EXT3(Arg0)

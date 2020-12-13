@@ -1,4 +1,6 @@
-//
+// SSDT for Notify BAT0 and BAT1 to BATC
+// ACPI binary patches required to function
+
 // For ACPI Patch:
 // _Q22 to XQ22:
 // Find:    5f51 3232
@@ -36,7 +38,7 @@
 // Find:    4241 545701
 // Replace: 5841 545701
 //
-DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
+DefinitionBlock ("", "SSDT", 2, "T480", "NTFY", 0)
 {
     External (\_SB.PCI0.LPCB.EC, DeviceObj)
     External (\_SB.PCI0.LPCB.EC.BATC, DeviceObj)
@@ -86,7 +88,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
                 \_SB.PCI0.LPCB.EC.XQ22 ()
             }
         }
-        
+
         Method (_Q4A, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (_OSI ("Darwin"))
@@ -99,7 +101,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
                 \_SB.PCI0.LPCB.EC.XQ4A ()
             }
         }
-        
+
         Method (_Q4B, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (_OSI ("Darwin"))
@@ -112,7 +114,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
                 \_SB.PCI0.LPCB.EC.XQ4B ()
             }
         }
-        
+
         Method (_Q4C, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (_OSI ("Darwin"))
@@ -137,7 +139,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
                 \_SB.PCI0.LPCB.EC.XQ4C ()
             }
         }
-            
+
         Method (_Q4D, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (_OSI ("Darwin"))
@@ -171,7 +173,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
                 \_SB.PCI0.LPCB.EC.XQ4D ()
             }
         }
-        
+
         Method (_Q24, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (_OSI ("Darwin"))
@@ -184,7 +186,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
                 \_SB.PCI0.LPCB.EC.XQ24 ()
             }
         }
-            
+
         Method (_Q25, 0, NotSerialized)  // _Qxx: EC Query, xx=0x00-0xFF
         {
             If (_OSI ("Darwin"))
@@ -200,7 +202,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
                 \_SB.PCI0.LPCB.EC.XQ25 ()
             }
         }
-            
+
         Method (BFCC, 0, NotSerialized)
         {
             If (_OSI ("Darwin"))
@@ -220,7 +222,7 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
                 \_SB.PCI0.LPCB.EC.XFCC ()
             }
         }
-        
+
         Method (BATW, 1, NotSerialized)
         {
             If (_OSI ("Darwin"))
@@ -251,4 +253,3 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "NTFY", 0)
         }
     }
 }
-

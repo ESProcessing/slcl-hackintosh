@@ -3,7 +3,7 @@
 // Find:     47505257 02
 // Replace:  58505257 02
 //
-DefinitionBlock ("", "SSDT", 2, "OCLT", "GPRW", 0)
+DefinitionBlock ("", "SSDT", 2, "T480", "GPRW", 0)
 {
     External(XPRW, MethodObj)
     Method (GPRW, 2, NotSerialized)
@@ -31,4 +31,3 @@ DefinitionBlock ("", "SSDT", 2, "OCLT", "GPRW", 0)
         Return (XPRW (Arg0, Arg1))
     }
 }
-
