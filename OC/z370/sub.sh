@@ -1,0 +1,3 @@
+sed        's/XXXXXXXXXXXXXXXXX/C02045609GULNV9A8/g' <config-z370.plist >config.plist
+sed  -i "" 's/YYYYYYYYYYYY/C02DNUYAJV3Q/g' config.plist
+sed  -i "" 's/ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ/F434050B-F6A9-46AD-8A99-2DD81816D85C/g' config.plist 
