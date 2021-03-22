@@ -598,8 +598,6 @@
                 <string>Optional</string>
                 <key>ScanPolicy</key>
                 <integer>0</integer>
-                <key>BootProtect</key>
-                <string>Bootstrap</string>
                 <key>ApECID</key>
                 <integer>0</integer>
                 <key>SecureBootModel</key>
@@ -756,8 +754,6 @@
                 <false/>
                 <key>KeyForgetThreshold</key>
                 <integer>5</integer>
-                <key>KeyMergeThreshold</key>
-                <integer>2</integer>
                 <key>KeySupport</key>
                 <true/>
                 <key>KeySupportMode</key>

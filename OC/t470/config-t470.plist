@@ -1001,7 +1001,7 @@
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                     <key>Enabled</key>
-                    <true/>
+                    <false/>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>ExecutablePath</key>
@@ -1019,7 +1019,7 @@
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                     <key>Enabled</key>
-                    <true/>
+                    <false/>
                     <key>MinKernel</key>
                     <string>17.0.0</string>
                     <key>ExecutablePath</key>
@@ -1447,8 +1447,6 @@
                 <string>Optional</string>
                 <key>ScanPolicy</key>
                 <integer>0</integer>
-                <key>BootProtect</key>
-                <string>Bootstrap</string>
                 <key>ApECID</key>
                 <integer>0</integer>
                 <key>SecureBootModel</key>
@@ -1598,8 +1596,6 @@
             <dict>
                 <key>KeyForgetThreshold</key>
                 <integer>5</integer>
-                <key>KeyMergeThreshold</key>
-                <integer>2</integer>
                 <key>KeySupport</key>
                 <true/>
                 <key>KeySupportMode</key>
@@ -1687,8 +1683,10 @@
                 <false/>
                 <key>ReleaseUsbOwnership</key>
                 <false/>
+<!--
                 <key>DeduplicateBootOrder</key>
                 <true/>
+-->
                 <key>RequestBootVarRouting</key>
                 <true/>
                 <key>UnblockFsConnect</key>
