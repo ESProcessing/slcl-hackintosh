@@ -1,0 +1,50 @@
+mkdir updated_files
+cd updated_files
+rm -rf *
+mkdir temp
+mkdir kexts
+mkdir drivers
+mkdir packages
+mkdir apps
+cd temp
+
+download_acidanthera() {
+   curl --silent "https://api.github.com/repos/acidanthera/$1/releases/latest" |jq -c ".assets | .[].browser_download_url" |grep "RELEASE" |xargs wget -q --show-progress --progress=bar:force 2>&1
+}
+
+download_rehabman() {
+   curl --silent https://api.bitbucket.org/2.0/repositories/RehabMan/$1/downloads |jq -c ".values[0].links.self.href" |xargs wget -q --show-progress --progress=bar:force 2>&1
+}
+
+download_other(){
+   wget -q --show-progress --progress=bar:force 2>&1 https://github.com/RehabMan/OS-X-USB-Inject-All/files/3267860/USBInjectAll.kext.zip
+}
+
+download_clover(){
+   curl --silent "https://api.github.com/repos/cloverhackycolor/cloverbootloader/releases/latest" |jq -c ".assets | .[].browser_download_url" |grep ".app" |xargs wget -q --show-progress --progress=bar:force 2>&1
+}
+
+download_acidanthera lilu
+download_acidanthera applealc
+download_acidanthera intelmausi
+download_acidanthera whatevergreen
+#download_acidanthera virtualsmc
+
+download_rehabman os-x-fakesmc-kozlek
+#download_rehabman os-x-usb-inject-all
+
+download_other
+
+download_clover
+
+echo "extracting..."
+unzip "*.zip"
+
+echo "cleanup.."
+cd ..
+find temp -name "*.app" -prune -exec mv {} apps \;
+find temp -name "*.pkg" -prune -exec mv {} packages \;
+find temp -name "*.kext" -prune -exec mv {} kexts \;
+find temp -name "*.efi"  -prune -exec mv {} drivers \;
+rm -rf temp
+echo "downloaded new files to 'updated_files'"
