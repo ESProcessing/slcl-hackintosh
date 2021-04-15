@@ -1,3 +1,3 @@
-sed      's/XXXXXXXXXXXXXXXXX/C02737701OPFF4KCB/g' <config-h270.plist >config.plist
-sed  -i  's/YYYYYYYYYYYY/C02VD2AJH7JY/g' config.plist
-#sed  -i  's/ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ//g' config.plist 
+sed      's/XXXXXXXXXXXXXXXXX/C02753301GUGPF71H/g' <config-h270.plist >config.plist
+sed  -i  's/YYYYYYYYYYYY/C02VX5Z2GG7L/g' config.plist
+sed  -i  's/ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ/AD5AEEED-B789-43FC-9DDE-C86C22D677B8/g' config.plist 
