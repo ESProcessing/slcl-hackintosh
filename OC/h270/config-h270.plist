@@ -1097,7 +1097,7 @@
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>-v  igfxonln=1 keepsyms=1 debug=0x100 alcid=21</string>
+                    <string>-v igfxonln=1 keepsyms=1 debug=0x100 alcid=21</string>
                     <key>csr-active-config</key>
                     <data>AAAAAA==</data>
                     <key>run-efi-updater</key>
@@ -1191,7 +1191,7 @@
             <key>UpdateSMBIOS</key>
             <true/>
             <key>UpdateSMBIOSMode</key>
-            <string>Create</string>
+            <string>Custom</string>
             <key>UseRawUuidEncoding</key>
             <false/>
         </dict>
@@ -1258,8 +1258,6 @@
                 <false/>
                 <key>KeyForgetThreshold</key>
                 <integer>5</integer>
-                <key>KeyMergeThreshold</key>
-                <integer>2</integer>
                 <key>KeySupport</key>
                 <true/>
                 <key>KeySupportMode</key>
