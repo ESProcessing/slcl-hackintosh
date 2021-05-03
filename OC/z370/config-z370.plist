@@ -180,117 +180,61 @@
                 <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
                 <dict>
                     <key>AAPL,ig-platform-id</key>
-                    <data>
-                        BwCbPg==
-                    </data>
+                    <data>BwCbPg==</data>
                     <key>device-id</key>
-                    <data>
-                        mz4AAA==
-                    </data>
+                    <data>mz4AAA==</data>
                     <key>enable-hdmi20</key>
-                    <data>
-                        AQAAAA==
-                    </data>
+                    <data>AQAAAA==</data>
                     <key>framebuffer-con0-busid</key>
-                    <data>
-                        AAAAAA==
-                    </data>
+                    <data>AAAAAA==</data>
                     <key>framebuffer-con0-enable</key>
-                    <data>
-                        AQAAAA==
-                    </data>
+                    <data>AQAAAA==</data>
                     <key>framebuffer-con0-flags</key>
-                    <data>
-                        IAAAAA==
-                    </data>
+                    <data>IAAAAA==</data>
                     <key>framebuffer-con0-index</key>
-                    <data>
-                        AAAAAA==
-                    </data>
+                    <data>AAAAAA==</data>
                     <key>framebuffer-con0-pipe</key>
-                    <data>
-                        AAAAAA==
-                    </data>
+                    <data>AAAAAA==</data>
                     <key>framebuffer-con0-type</key>
-                    <data>
-                        AgAAAA==
-                    </data>
+                    <data>AgAAAA==</data>
                     <key>framebuffer-con1-busid</key>
-                    <data>
-                        BQAAAA==
-                    </data>
+                    <data>BQAAAA==</data>
                     <key>framebuffer-con1-enable</key>
-                    <data>
-                        AQAAAA==
-                    </data>
+                    <data>AQAAAA==</data>
                     <key>framebuffer-con1-index</key>
-                    <data>
-                        AQAAAA==
-                    </data>
+                    <data>AQAAAA==</data>
                     <key>framebuffer-con1-pipe</key>
-                    <data>
-                        EgAAAA==
-                    </data>
+                    <data>EgAAAA==</data>
                     <key>framebuffer-con1-type</key>
-                    <data>
-                        AAgAAA==
-                    </data>
+                    <data>AAgAAA==</data>
                     <key>framebuffer-con2-busid</key>
-                    <data>
-                        BAAAAA==
-                    </data>
+                    <data>BAAAAA==</data>
                     <key>framebuffer-con2-enable</key>
-                    <data>
-                        AQAAAA==
-                    </data>
+                    <data>AQAAAA==</data>
                     <key>framebuffer-con2-index</key>
-                    <data>
-                        AgAAAA==
-                    </data>
+                    <data>AgAAAA==</data>
                     <key>framebuffer-con2-pipe</key>
-                    <data>
-                        EgAAAA==
-                    </data>
+                    <data>EgAAAA==</data>
                     <key>framebuffer-con2-type</key>
-                    <data>
-                        AAgAAA==
-                    </data>
+                    <data>AAgAAA==</data>
                     <key>framebuffer-con3-busid</key>
-                    <data>
-                        BgAAAA==
-                    </data>
+                    <data>BgAAAA==</data>
                     <key>framebuffer-con3-enable</key>
-                    <data>
-                        AQAAAA==
-                    </data>
+                    <data>AQAAAA==</data>
                     <key>framebuffer-con3-flags</key>
-                    <data>
-                        xwMAAA==
-                    </data>
+                    <data>xwMAAA==</data>
                     <key>framebuffer-con3-index</key>
-                    <data>
-                        AwAAAA==
-                    </data>
+                    <data>AwAAAA==</data>
                     <key>framebuffer-con3-pipe</key>
-                    <data>
-                        EgAAAA==
-                    </data>
+                    <data>EgAAAA==</data>
                     <key>framebuffer-con3-type</key>
-                    <data>
-                        AAQAAA==
-                    </data>
+                    <data>AAQAAA==</data>
                     <key>framebuffer-patch-enable</key>
-                    <data>
-                        AQAAAA==
-                    </data>
+                    <data>AQAAAA==</data>
                     <key>framebuffer-portcount</key>
-                    <data>
-                        BAAAAA==
-                    </data>
+                    <data>BAAAAA==</data>
                     <key>framebuffer-unifiedmem</key>
-                    <data>
-                        AAAAgA==
-                    </data>
+                    <data>AAAAgA==</data>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
                 <dict>
@@ -481,6 +425,22 @@
                     <key>Arch</key>
                     <string>x86_64</string>
                     <key>BundlePath</key>
+                    <string>AirportBrcmFixup.kext/Contents/Plugins/AirportBrcmNIC_Injector.kext</string>
+                    <key>Comment</key>
+                    <string></string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>BundlePath</key>
                     <string>AirportBrcmFixup.kext</string>
                     <key>Comment</key>
                     <string></string>
@@ -585,7 +545,8 @@
                 <string></string>
             </dict>
             <key>Force</key>
-            <array/>
+            <array>
+	    </array>
             <key>Patch</key>
             <array>
             </array>
@@ -832,6 +793,21 @@
                 <key>MinVersion</key>
                 <integer>0</integer>
             </dict>
+	    <key>AppleInput</key>
+	    <dict>
+		<key>AppleEvent</key>
+		<string>Builtin</string>
+		<key>CustomDelays</key>
+		<string>Auto</string>
+		<key>KeyInitialDelay</key>
+		<integer>0</integer>
+		<key>KeySubsequentDelay</key>
+		<integer>5</integer>
+		<key>PointerSpeedDiv</key>
+		<integer>1</integer>
+		<key>PointerSpeedMul</key>
+		<integer>1</integer>
+	    </dict>
             <key>Audio</key>
             <dict>
                 <key>AudioCodec</key>
@@ -845,7 +821,7 @@
                 <key>MinimumVolume</key>
                 <integer>20</integer>
                 <key>PlayChime</key>
-                <true/>
+                <string>Enabled</string>
                 <key>VolumeAmplifier</key>
                 <integer>0</integer>
             </dict>
@@ -906,8 +882,10 @@
                 <false/>
                 <key>AppleDebugLog</key>
                 <false/>
+<!-- bump to 0.6.8
                 <key>AppleEvent</key>
                 <false/>
+-->
                 <key>AppleImageConversion</key>
                 <false/>
                 <key>AppleKeyMap</key>
@@ -931,8 +909,6 @@
             </dict>
             <key>Quirks</key>
             <dict>
-                <key>DeduplicateBootOrder</key>
-                <false/>
                 <key>RequestBootVarRouting</key>
                 <true/>
                 <key>UnblockFsConnect</key>
