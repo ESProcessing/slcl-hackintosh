@@ -138,7 +138,8 @@
                 </dict>
             </array>
             <key>Delete</key>
-            <array/>
+	    <array>
+            </array>
             <key>Patch</key>
             <array>
                 <dict>
@@ -1601,6 +1602,21 @@
                 <string>AudioDxe.efi</string>
                 <string>CrScreenshotDxe.efi</string>
             </array>
+	    <key>AppleInput</key>
+	    <dict>
+		<key>AppleEvent</key>
+		<string>Builtin</string>
+		<key>CustomDelays</key>
+		<string>Auto</string>
+		<key>KeyInitialDelay</key>
+		<integer>0</integer>
+		<key>KeySubsequentDelay</key>
+		<integer>5</integer>
+		<key>PointerSpeedDiv</key>
+		<integer>1</integer>
+		<key>PointerSpeedMul</key>
+		<integer>1</integer>
+	    </dict>
             <key>Audio</key>
             <dict>
                 <key>AudioSupport</key>
@@ -1614,7 +1630,7 @@
                 <key>MinimumVolume</key>
                 <integer>50</integer>
                 <key>PlayChime</key>
-                <string>auto</string>
+                <string>Enabled</string>
                 <key>VolumeAmplifier</key>
                 <integer>143</integer>
             </dict>
@@ -1668,8 +1684,10 @@
                 <false/>
                 <key>AppleBootPolicy</key>
                 <false/>
+<!-- bump to 0.6.8
                 <key>AppleEvent</key>
                 <false/>
+-->
                 <key>AppleImageConversion</key>
                 <false/>
                 <key>AppleKeyMap</key>
