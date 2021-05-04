@@ -511,6 +511,22 @@
                     <key>Arch</key>
                     <string>x86_64</string>
                     <key>BundlePath</key>
+                    <string>AirportBrcmFixup.kext/Contents/Plugins/AirportBrcmNIC_Injector.kext</string>
+                    <key>Comment</key>
+                    <string></string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>BundlePath</key>
                     <string>AirportBrcmFixup.kext</string>
                     <key>Comment</key>
                     <string></string>
@@ -1212,6 +1228,21 @@
                 <key>MinVersion</key>
                 <integer>0</integer>
             </dict>
+	    <key>AppleInput</key>
+	    <dict>
+		<key>AppleEvent</key>
+		<string>Builtin</string>
+		<key>CustomDelays</key>
+		<string>Auto</string>
+		<key>KeyInitialDelay</key>
+		<integer>0</integer>
+		<key>KeySubsequentDelay</key>
+		<integer>5</integer>
+		<key>PointerSpeedDiv</key>
+		<integer>1</integer>
+		<key>PointerSpeedMul</key>
+		<integer>1</integer>
+	    </dict>
             <key>Audio</key>
             <dict>
                 <key>AudioCodec</key>
@@ -1308,8 +1339,10 @@
                 <false/>
                 <key>AppleDebugLog</key>
                 <false/>
+<!-- bump to 0.6.8
                 <key>AppleEvent</key>
                 <false/>
+-->
                 <key>AppleFramebufferInfo</key>
                 <false/>
                 <key>AppleImageConversion</key>
