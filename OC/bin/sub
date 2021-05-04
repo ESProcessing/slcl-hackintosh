@@ -1,0 +1,63 @@
+#!/usr/local/bin/bash
+
+HW=""
+SET=""
+
+declare -A MLB SER ETH
+
+MLB[z370]=C02045609GULNV9A8
+SER[z370]=C02DNUYAJV3Q
+ETH[z370]=F434050B-F6A9-46AD-8A99-2DD81816D85C
+
+MLB[h270]=C02603200GUGPF7UE
+SER[h270]=C02R40PPGG7L
+ETH[h270]=C5BA2078-9EA1-441F-86FD-7482380D6A31
+
+MLB[t470]=C02642500J9HMHK1H
+SER[t470]=C02SK6ZYGVC1
+ETH[t470]=832D19FF-BBD9-4B7D-9D68-4C9CC922A7D0
+
+usage() {
+    echo "usage:"
+    echo "   sub -t z370|h270|t470 -s|-u"
+    exit 1
+}
+
+while getopts "sut:" opt; do
+    case ${opt} in
+	t ) TYPE=${OPTARG}
+	    ;;
+        s ) SET="s"
+            ;;
+        u ) SET="u"
+            ;;
+        \? ) echo "Usage: cmd [-s] [-u] -t z370|t470|h270"
+             ;;
+    esac
+done
+
+[ ${TYPE} != z370 ] &&  [ ${TYPE} != h270 ] &&  [ ${TYPE} != t470 ]  &&  usage 
+
+echo TYPE=${TYPE}
+echo '${MLB[${TYPE}]}' = ${MLB[${TYPE}]}
+
+case ${SET} in
+    s)
+	# process option s
+	echo "config-${TYPE}.plist + serials --> config.plist"
+	sed      's/XXXXXXXXXXXXXXXXX/'${MLB[${TYPE}]}'/g' <config-${TYPE}.plist >config.plist
+	sed  -i  's/YYYYYYYYYYYY/'${SER[${TYPE}]}'/g' config.plist
+	sed  -i  's/ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ/'${ETH[${TYPE}]}'/g' config.plist
+	;;
+    u)
+	# process option u
+	echo "config.plist - serials --> config-${TYPE}.plist"
+	sed      's/'${MLB[${TYPE}]}'/XXXXXXXXXXXXXXXXX/g' <config.plist >config-${TYPE}.plist
+	sed  -i  's/'${SER[${TYPE}]}'/YYYYYYYYYYYY/g' config-${TYPE}.plist
+	sed  -i  's/'${ETH[${TYPE}]}'/ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ/g' config-${TYPE}.plist
+	;;
+    *) echo "-s or -u must be specified"
+       ;;
+esac
+
+

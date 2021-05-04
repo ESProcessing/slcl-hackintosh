@@ -1,3 +1,0 @@
-sed      's/XXXXXXXXXXXXXXXXX/C02603200GUGPF7UE/g' <config-h270.plist >config.plist
-sed  -i  's/YYYYYYYYYYYY/C02R40PPGG7L/g' config.plist
-sed  -i  's/ZZZZZZZZ-ZZZZ-ZZZZ-ZZZZ-ZZZZZZZZZZZZ/C5BA2078-9EA1-441F-86FD-7482380D6A31/g' config.plist 
