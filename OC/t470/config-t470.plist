@@ -1374,6 +1374,8 @@
                 <true/>
                 <key>PowerTimeoutKernelPanic</key>
                 <true/>
+                <key>ProvideCurrentCpuInfo</key>
+                <false/>		
                 <key>ThirdPartyDrives</key>
                 <false/>
                 <key>XhciPortLimit</key>
@@ -1444,6 +1446,8 @@
                     <string>Not signed for security reasons</string>
                     <key>Enabled</key>
                     <false/>
+                    <key>Flavour</key>
+                    <string>Auto</string>		    
                     <key>Name</key>
                     <string>CustomOS</string>
                     <key>Path</key>
@@ -1456,6 +1460,8 @@
                 <true/>
                 <key>AllowSetDefault</key>
                 <true/>
+                <key>AllowToggleSip</key>
+                <false/>		
                 <key>BlacklistAppleUpdate</key>
                 <true/>
                 <key>AuthRestart</key>
@@ -1563,7 +1569,7 @@
             <true/>
             <key>Generic</key>
             <dict>
-                <key>AdviseWindows</key>
+                <key>AdviseFeatures</key>
                 <false/>
                 <key>SystemMemoryStatus</key>
                 <string>Auto</string>
@@ -1671,10 +1677,20 @@
                 <true/>
                 <key>DirectGopRendering</key>
                 <false/>
+		<key>ForceResolution</key>
+		<false/>
+		<key>GopPassThrough</key>
+		<string>Disabled</string>
+		<key>IgnoreTextInGraphics</key>
+		<false/>
+		<key>ProvideConsoleGop</key>
+		<true/>
                 <key>ReconnectOnResChange</key>
                 <false/>
                 <key>ReplaceTabWithSpace</key>
                 <false/>
+		<key>Resolution</key>
+		<string>Max</string>
                 <key>SanitiseClearScreen</key>
                 <false/>
                 <key>UgaPassThrough</key>
@@ -1686,14 +1702,22 @@
                 <false/>
                 <key>AppleBootPolicy</key>
                 <false/>
-<!-- bump to 0.6.8
-                <key>AppleEvent</key>
-                <false/>
--->
-                <key>AppleImageConversion</key>
-                <false/>
+		<key>AppleDebugLog</key>
+		<false/>
+		<key>AppleEg2Info</key>
+		<false/>
+		<key>AppleFramebufferInfo</key>
+		<false/>
+		<key>AppleImageConversion</key>
+		<false/>
+		<key>AppleImg4Verification</key>
+		<false/>
                 <key>AppleKeyMap</key>
                 <false/>
+		<key>AppleRtcRam</key>
+		<false/>
+		<key>AppleSecureBoot</key>
+		<false/>
                 <key>AppleSmcIo</key>
                 <false/>
                 <key>AppleUserInterfaceTheme</key>
@@ -1703,7 +1727,7 @@
                 <key>DeviceProperties</key>
                 <false/>
                 <key>FirmwareVolume</key>
-                <false/>
+                <true/>
                 <key>HashServices</key>
                 <false/>
                 <key>OSInfo</key>
@@ -1717,8 +1741,6 @@
                 <key>AppleFramebufferInfo</key>
                 <false/>
                 <key>AppleImg4Verification</key>
-                <false/>
-                <key>AppleSecureBoot</key>
                 <false/>
             </dict>
             <key>Quirks</key>
