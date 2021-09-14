@@ -138,7 +138,7 @@
                 </dict>
             </array>
             <key>Delete</key>
-	    <array>
+            <array>
             </array>
             <key>Patch</key>
             <array>
@@ -626,32 +626,32 @@
                     <data>HQAAAA==</data>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
-			<dict>
-				<key>@0,display-dual-link</key>
-				<integer>1</integer>
-				<key>AAPL,ig-platform-id</key>
-				<data>AAAWGQ==</data>
-				<key>device-id</key>
-				<data>FhkAAA==</data>
-				<key>enable-hdmi20</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-con2-enable</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-con2-type</key>
-				<data>AAgAAA==</data>
-				<key>framebuffer-fbmem</key>
-				<data>AACQAA==</data>
-				<key>framebuffer-patch-enable</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-stolenmem</key>
-				<data>AAAwAQ==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>model</key>
-				<string>Intel HD Graphics 520</string>
-			</dict>		
-<!--
                 <dict>
+                    <key>@0,display-dual-link</key>
+                    <integer>1</integer>
+                    <key>AAPL,ig-platform-id</key>
+                    <data>AAAWGQ==</data>
+                    <key>device-id</key>
+                    <data>FhkAAA==</data>
+                    <key>enable-hdmi20</key>
+                    <data>AQAAAA==</data>
+                    <key>framebuffer-con2-enable</key>
+                    <data>AQAAAA==</data>
+                    <key>framebuffer-con2-type</key>
+                    <data>AAgAAA==</data>
+                    <key>framebuffer-fbmem</key>
+                    <data>AACQAA==</data>
+                    <key>framebuffer-patch-enable</key>
+                    <data>AQAAAA==</data>
+                    <key>framebuffer-stolenmem</key>
+                    <data>AAAwAQ==</data>
+                    <key>hda-gfx</key>
+                    <string>onboard-1</string>
+                    <key>model</key>
+                    <string>Intel HD Graphics 520</string>
+                </dict>
+                <!--
+                    <dict>
                     <key>AAPL,ig-platform-id</key>
                     <data>AAAWGQ==</data>
                     <key>enable-hdmi20</key>
@@ -664,8 +664,8 @@
                     <data>AAAwAQ==</data>
                     <key>framebuffer-unifiedmem</key>
                     <data>AAAAgA==</data>
-                </dict>
--->
+                    </dict>
+                -->
             </dict>
             <key>Delete</key>
             <dict>
@@ -1182,8 +1182,8 @@
                     <key>BundlePath</key>
                     <string>VoodooRMI.kext/Contents/PlugIns/VoodooInput.kext</string>
                 </dict>
-<!--
-                <dict>
+                <!--
+                    <dict>
                     <key>Arch</key>
                     <string>x86_64</string>
                     <key>Comment</key>
@@ -1200,8 +1200,8 @@
                     <string>Contents/MacOS/VoodooTrackpoint</string>
                     <key>BundlePath</key>
                     <string>VoodooRMI.kext/Contents/PlugIns/VoodooTrackpoint.kext</string>
-                </dict>
--->
+                    </dict>
+                -->
                 <!-- / Keyboard and TrackPad/TrackPoint -->
             </array>
             <key>Block</key>
@@ -1375,7 +1375,7 @@
                 <key>PowerTimeoutKernelPanic</key>
                 <true/>
                 <key>ProvideCurrentCpuInfo</key>
-                <false/>		
+                <false/>
                 <key>ThirdPartyDrives</key>
                 <false/>
                 <key>XhciPortLimit</key>
@@ -1447,7 +1447,7 @@
                     <key>Enabled</key>
                     <false/>
                     <key>Flavour</key>
-                    <string>Auto</string>		    
+                    <string>Auto</string>
                     <key>Name</key>
                     <string>CustomOS</string>
                     <key>Path</key>
@@ -1461,7 +1461,7 @@
                 <key>AllowSetDefault</key>
                 <true/>
                 <key>AllowToggleSip</key>
-                <false/>		
+                <false/>
                 <key>BlacklistAppleUpdate</key>
                 <true/>
                 <key>AuthRestart</key>
@@ -1603,28 +1603,161 @@
         <dict>
             <key>ConnectDrivers</key>
             <true/>
-            <key>Drivers</key>
-            <array>
+            <!--
+                <key>Drivers</key>
+                <array>
                 <string>OpenRuntime.efi</string>
                 <string>OpenCanopy.efi</string>
                 <string>AudioDxe.efi</string>
                 <string>CrScreenshotDxe.efi</string>
+                </array>
+            -->
+            <key>Drivers</key>
+            <array>
+                <dict>
+                    <key>Path</key>
+                    <string>OpenHfsPlus.efi</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>OpenRuntime.efi</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>OpenCanopy.efi</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>AudioDxe.efi</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>OpenPartitionDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>OpenUsbKbDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>UsbMouseDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>Ps2KeyboardDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>Ps2MouseDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>HiiDatabase.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>NvmExpressDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>XhciDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>ExFatDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>CrScreenshotDxe.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>ext4_x64.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
+                <dict>
+                    <key>Path</key>
+                    <string>OpenLinuxBoot.efi</string>
+                    <key>Enabled</key>
+                    <false/>
+                    <key>Arguments</key>
+                    <string></string>
+                </dict>
             </array>
-	    <key>AppleInput</key>
-	    <dict>
-		<key>AppleEvent</key>
-		<string>Builtin</string>
-		<key>CustomDelays</key>
-		<false/>
-		<key>KeyInitialDelay</key>
-		<integer>50</integer>
-		<key>KeySubsequentDelay</key>
-		<integer>5</integer>
-		<key>PointerSpeedDiv</key>
-		<integer>1</integer>
-		<key>PointerSpeedMul</key>
-		<integer>1</integer>
-	    </dict>
+            <key>AppleInput</key>
+            <dict>
+                <key>AppleEvent</key>
+                <string>Builtin</string>
+                <key>CustomDelays</key>
+                <false/>
+                <key>KeyInitialDelay</key>
+                <integer>50</integer>
+                <key>KeySubsequentDelay</key>
+                <integer>5</integer>
+                <key>PointerSpeedDiv</key>
+                <integer>1</integer>
+                <key>PointerSpeedMul</key>
+                <integer>1</integer>
+            </dict>
             <key>Audio</key>
             <dict>
                 <key>AudioSupport</key>
@@ -1677,20 +1810,20 @@
                 <true/>
                 <key>DirectGopRendering</key>
                 <false/>
-		<key>ForceResolution</key>
-		<false/>
-		<key>GopPassThrough</key>
-		<string>Disabled</string>
-		<key>IgnoreTextInGraphics</key>
-		<false/>
-		<key>ProvideConsoleGop</key>
-		<true/>
+                <key>ForceResolution</key>
+                <false/>
+                <key>GopPassThrough</key>
+                <string>Disabled</string>
+                <key>IgnoreTextInGraphics</key>
+                <false/>
+                <key>ProvideConsoleGop</key>
+                <true/>
                 <key>ReconnectOnResChange</key>
                 <false/>
                 <key>ReplaceTabWithSpace</key>
                 <false/>
-		<key>Resolution</key>
-		<string>Max</string>
+                <key>Resolution</key>
+                <string>Max</string>
                 <key>SanitiseClearScreen</key>
                 <false/>
                 <key>UgaPassThrough</key>
@@ -1702,22 +1835,22 @@
                 <false/>
                 <key>AppleBootPolicy</key>
                 <false/>
-		<key>AppleDebugLog</key>
-		<false/>
-		<key>AppleEg2Info</key>
-		<false/>
-		<key>AppleFramebufferInfo</key>
-		<false/>
-		<key>AppleImageConversion</key>
-		<false/>
-		<key>AppleImg4Verification</key>
-		<false/>
+                <key>AppleDebugLog</key>
+                <false/>
+                <key>AppleEg2Info</key>
+                <false/>
+                <key>AppleFramebufferInfo</key>
+                <false/>
+                <key>AppleImageConversion</key>
+                <false/>
+                <key>AppleImg4Verification</key>
+                <false/>
                 <key>AppleKeyMap</key>
                 <false/>
-		<key>AppleRtcRam</key>
-		<false/>
-		<key>AppleSecureBoot</key>
-		<false/>
+                <key>AppleRtcRam</key>
+                <false/>
+                <key>AppleSecureBoot</key>
+                <false/>
                 <key>AppleSmcIo</key>
                 <false/>
                 <key>AppleUserInterfaceTheme</key>
@@ -1754,7 +1887,7 @@
                 <key>ExitBootServicesDelay</key>
                 <integer>0</integer>
                 <key>ForgeUefiSupport</key>
-                <false/>		
+                <false/>
                 <key>IgnoreInvalidFlexRatio</key>
                 <false/>
                 <key>ReleaseUsbOwnership</key>
